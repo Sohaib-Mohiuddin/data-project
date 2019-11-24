@@ -27,6 +27,4 @@ $result = $conn->query($sql);
             <td><?php echo $row['Major'];?></td>
             </tr>
     <?php  } ?>
-
-    ?>
 </table>
