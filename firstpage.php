@@ -1,14 +1,32 @@
 <?php
 include('connection.php');
+
 $sql = "SELECT * FROM student";
 $result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "SN: " . $row["SN"]. " First Name: " . $row["Fname"]. "Last Name: " . $row["Lname"]. "DoB: " . $row["DoB"]. "PN: " . $row["PN"]. "Email: " . $row["Email"]. "Major: " . $row["Major"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
 ?>
+<table border = "1">
+    <tr>
+        <td>SN</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Date of Birth</td>
+        <td>Phone Number</td>
+        <td>Email</td>
+        <td>Major</td>
+    </tr>
+
+    <?php
+        while ($row = mysqli_fetch_array($result)) {?>
+            <tr>
+            <td><?php echo $row['SN'];?></td>
+            <td><?php echo $row['Fname'];?></td>
+            <td><?php echo $row['Lname'];?></td>
+            <td><?php echo $row['DoB'];?></td>
+            <td><?php echo $row['PN'];?></td>
+            <td><?php echo $row['Email'];?></td>
+            <td><?php echo $row['Major'];?></td>
+            </tr>
+    <?php  } ?>
+
+    ?>
+</table>
