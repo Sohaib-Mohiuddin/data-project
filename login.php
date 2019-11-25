@@ -16,7 +16,10 @@
     <form method='POST' action='login.php'>
         
         <div class="input-group">
-        Student Number: <input type='number' name='employeeid' autocomplete="off"><br><br>
+        Student Number: <input type='number' name='studentid' autocomplete="off"><br><br>
+        </div>
+        <div class="input-group">
+        Password: <input type='password' name='password' autocomplete="off"><br><br>
         </div>
         
         <select>
