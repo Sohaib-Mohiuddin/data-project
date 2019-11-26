@@ -1,0 +1,39 @@
+$_SESSION['users'] = array();
+$_SESSION['users']['SN'] = $user['SN'];
+$_SESSION['users']['Fname'] = $user['Fname'];
+$_SESSION['users']['Lname'] = $user['Lname'];
+$_SESSION['users']['PN'] = $user['PN'];
+$_SESSION['users']['Email'] = $user['Email'];
+$_SESSION['users']['Major'] = $user['Major'];
+
+<table border = "1">
+    <tr>
+        <td>Student Number</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Phone</td>
+        <td>Email</td>
+        <td>Major</td>
+    </tr>
+    
+    <tr>
+        <td><?php echo $_SESSION['users']['SN'];?></td>
+        <td><?php echo $_SESSION['users']['Fname'];?></td>
+        <td><?php echo $_SESSION['users']['Lname'];?></td>
+        <td><?php echo $_SESSION['users']['PN'];?></td>
+        <td><?php echo $_SESSION['users']['Email'];?></td>
+        <td><?php echo $_SESSION['users']['Major'];?></td>
+    </tr> 
+</table>
+
+<tr>
+        <td><?php echo $_SESSION['users']['SN'];?></td>
+        <td><?php echo $_SESSION['users']['Fname'];?></td>
+        <td><?php echo $_SESSION['users']['Lname'];?></td>
+        <td><?php echo $_SESSION['users']['PN'];?></td>
+    </tr>
+
+<?php
+    foreach ($_SESSION['users'] as $row => $value) { ?>
+        <td><?php echo $value;?></td>
+    <?php } ?>
