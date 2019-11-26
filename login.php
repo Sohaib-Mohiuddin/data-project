@@ -18,9 +18,9 @@
         <div class="input-group">
         Student Number: <input type='number' name='studentid' autocomplete="off"><br><br>
         </div>
-        <!-- <div class="input-group">
+        <div class="input-group">
         Password: <input type='password' name='password' autocomplete="off"><br><br>
-        </div> -->
+        </div>
         
         <select>
             <option value="Student">Student</option>

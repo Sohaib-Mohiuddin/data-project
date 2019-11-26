@@ -27,21 +27,6 @@ if (isset($_POST['login_user'])){
         die("Connection failed: ".mysqli_connect_error());
     }
 
- 
-    $query = "SELECT SN, Fname, Lname, PN FROM student";
-    $results = mysqli_query($conn, $query);
-    $user = mysqli_fetch_array($results);
-    
-    if (mysqli_num_rows($results) > 0){
-        // while (mysqli_fetch_array($results)) {
-        $_SESSION['users'] = array();
-        $_SESSION['users']['SN'] = $user['SN'];
-        $_SESSION['users']['Fname'] = $user['Fname'];
-        $_SESSION['users']['Lname'] = $user['Lname'];
-        $_SESSION['users']['PN'] = $user['PN'];
-        // }
-
-        header('location: student_homepage.php');
-    }
+    header('location: student_homepage.php');
 }
 ?>
