@@ -3,8 +3,12 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
-    $query = "";
-    $results = mysqli_query($conn, $query);
+
+    $query1 = "SELECT * FROM review WHERE SN = '$id'";
+    $results1 = mysqli_query($conn, $query1);
+
+    $query2 = "SELECT Fname, Lname FROM professor WHERE Profno = ALL(SELECT Profno FROM review WHERE Rating = 3) GROUP BY Fname";
+    $results2 = mysqli_query($conn, $query2);
 ?>
 <?php if (isset($_SESSION['users'])):?>
 <strong><?php echo "Welcome ".$_SESSION['users']['SN'];?>
@@ -20,18 +24,37 @@
 
 <br><br><br>
 
+<p>Student Ratings for Professors</p>
 <table>
     <thead>
         <tr>
-            <th>Course Name</th>
+            <th>Student Number</th>
+            <th>Rating</th>
+            <th>Prof Number</th>
             <th>CRN</th>
+        </tr>
+    </thead>
+    <?php while ($row = mysqli_fetch_array($results1)) { ?>
+        <tr>
+            <td><?php echo $row['SN'];?></td>
+            <td><?php echo $row['Rating'];?></td>
+            <td><?php echo $row['Profno'];?></td>
+            <td><?php echo $row['CRN'];?></td>
+        </tr>
+    <?php } ?>
+</table>
+
+<br><br><br>
+
+<p>Professors with a Rating of 3</p>
+<table>
+    <thead>
+        <tr>
             <th>Professor Name</th>
         </tr>
     </thead>
-    <?php while ($row = mysqli_fetch_array($results)) { ?>
+    <?php while ($row = mysqli_fetch_array($results2)) { ?>
         <tr>
-            <td><?php echo $row['Cname'];?></td>
-            <td><?php echo $row['CRN'];?></td>
             <td><?php echo $row['Fname'] . " " . $row['Lname'];?></td>
         </tr>
     <?php } ?>

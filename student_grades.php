@@ -14,6 +14,7 @@
     <button class="tablinks" onclick="openCity(event, 'student_homepage')">Home</button>
     <button class="tablinks" onclick="openCity(event, 'student_profile')">Profile</button>
     <button class="tablinks" onclick="openCity(event, 'student_grades')">Grades</button>
+    <button class="tablinks" onclick="openCity(event, 'student_review')">Reviews</button>
     <!-- <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button> -->
 </div>
 
@@ -28,10 +29,10 @@
         </tr>
     </thead>
     <?php while ($row = mysqli_fetch_array($results)) { ?>
-            <tr>
-                <td><?php echo $row['SN'];?></td>
-                <td><?php echo $row['Cname'];?></td>
-                <td><?php echo $row['Grade'] . "%";?></td>
-            </tr>
+        <tr>
+            <td><?php echo $row['SN'];?></td>
+            <td><?php echo $row['Cname'];?></td>
+            <td><?php echo $row['Grade'] . "%";?></td>
+        </tr>
     <?php } ?>
 </table>

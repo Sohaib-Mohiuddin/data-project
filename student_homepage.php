@@ -14,7 +14,15 @@
     <button class="tablinks" onclick="openCity(event, 'student_homepage')">Home</button>
     <button class="tablinks" onclick="openCity(event, 'student_profile')">Profile</button>
     <button class="tablinks" onclick="openCity(event, 'student_grades')">Grades</button>
+    <button class="tablinks" onclick="openCity(event, 'student_review')">Reviews</button>
     <!-- <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button> -->
+</div>
+
+<br><br><br>
+
+<div style = "display:inline-block;">
+    <input type = "button" value = "A" href = "#A">
+    <input type = "button" value = "B" href = "#B">
 </div>
 
 <br><br><br>
@@ -28,11 +36,27 @@
         </tr>
     </thead>
     <?php while ($row = mysqli_fetch_array($results)) { ?>
-            <tr>
-                <td><?php echo $row['Cname'];?></td>
-                <td><?php echo $row['CRN'];?></td>
-                <td><?php echo $row['Fname'] . " " . $row['Lname'];?></td>
-            </tr>
+        <tr>
+            <td><?php echo $row['Cname'];?></td>
+            <td><?php echo $row['CRN'];?></td>
+            <td><?php echo $row['Fname'] . " " . $row['Lname'];?></td>
+        </tr>
     <?php } ?>
 </table>
 
+<form>
+    <p>A</p>
+    <select id = "A">
+        <option value="Query">Query</option>
+        <option value="Query">Query</option>
+        <option value="Query">Query</option>
+        <option value="Query">Query</option>
+    </select>
+    <p>B</p>
+    <select id = "B">
+        <option value="Query">Query</option>
+        <option value="Query">Query</option>
+        <option value="Query">Query</option>
+        <option value="Query">Query</option>
+    </select>
+</form>
