@@ -13,7 +13,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully\n";
+// echo "Connected successfully\n";
 
 //Logging in the user
 if (isset($_POST['login_user'])){
@@ -41,7 +41,7 @@ if (isset($_POST['login_user'])){
         $_SESSION['users']['PN'] = $user['PN'];
         // }
 
-        header('location: firstpage.php');
+        header('location: student_homepage.php');
     }
 }
 ?>

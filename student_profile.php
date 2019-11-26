@@ -3,7 +3,7 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
-    $query = "SELECT E.Cname, E.CRN, P.Fname, P.Lname FROM enrolled_in E, courses C, professor P WHERE E.SN = '$id' AND E.Cname = C.Cname AND C.Profno = P.Profno";
+    $query = "";
     $results = mysqli_query($conn, $query);
 ?>
 <?php if (isset($_SESSION['users'])):?>
@@ -19,7 +19,7 @@
 
 <br><br><br>
 
-<table class = "table">
+<table>
     <thead>
         <tr>
             <th>Course Name</th>
@@ -35,4 +35,3 @@
             </tr>
     <?php } ?>
 </table>
-

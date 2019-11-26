@@ -3,7 +3,7 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
-    $query = "SELECT E.Cname, E.CRN, P.Fname, P.Lname FROM enrolled_in E, courses C, professor P WHERE E.SN = '$id' AND E.Cname = C.Cname AND C.Profno = P.Profno";
+    $query = "SELECT S.SN, Cname, Grade FROM student S JOIN grades G ON G.SN = S.SN JOIN courses C ON C.CRN = G.CRN WHERE S.SN = '$id'";
     $results = mysqli_query($conn, $query);
 ?>
 <?php if (isset($_SESSION['users'])):?>
@@ -19,20 +19,19 @@
 
 <br><br><br>
 
-<table class = "table">
-    <thead>
+<table>
+    <thead>    
         <tr>
+            <th>Student Number</th>
             <th>Course Name</th>
-            <th>CRN</th>
-            <th>Professor Name</th>
+            <th>Grade</td>
         </tr>
     </thead>
     <?php while ($row = mysqli_fetch_array($results)) { ?>
             <tr>
+                <td><?php echo $row['SN'];?></td>
                 <td><?php echo $row['Cname'];?></td>
-                <td><?php echo $row['CRN'];?></td>
-                <td><?php echo $row['Fname'] . " " . $row['Lname'];?></td>
+                <td><?php echo $row['Grade'] . "%";?></td>
             </tr>
     <?php } ?>
 </table>
-
