@@ -25,3 +25,15 @@ $_SESSION['users']['Major'] = $user['Major'];
         <td><?php echo $_SESSION['users']['Major'];?></td>
     </tr> 
 </table>
+
+<tr>
+        <td><?php echo $_SESSION['users']['SN'];?></td>
+        <td><?php echo $_SESSION['users']['Fname'];?></td>
+        <td><?php echo $_SESSION['users']['Lname'];?></td>
+        <td><?php echo $_SESSION['users']['PN'];?></td>
+    </tr>
+
+<?php
+    foreach ($_SESSION['users'] as $row => $value) { ?>
+        <td><?php echo $value;?></td>
+    <?php } ?>

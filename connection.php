@@ -1,11 +1,10 @@
 <?php
 session_start();
-$servername = "db4free.net";
-$username = "yshaik392";
-$password = "testing123";
+$servername = "localhost";
+$username = "root";
+$password = "Sohaibm131";
 $database = "school_yshaik";
 $users = "";
-$resultt = "";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -29,19 +28,19 @@ if (isset($_POST['login_user'])){
     }
 
  
-    $query = "SELECT * FROM enrolled_in WHERE SN='$studentid'";
+    $query = "SELECT SN, Fname, Lname, PN FROM student";
     $results = mysqli_query($conn, $query);
     $user = mysqli_fetch_array($results);
     
-    $_SESSION['resultt'] = $results;
-
     if (mysqli_num_rows($results) > 0){
+        // while (mysqli_fetch_array($results)) {
         $_SESSION['users'] = array();
         $_SESSION['users']['SN'] = $user['SN'];
-        $_SESSION['users']['CRN'] = $user['CRN'];
-        $_SESSION['users']['Cname'] = $user['Cname'];
+        $_SESSION['users']['Fname'] = $user['Fname'];
+        $_SESSION['users']['Lname'] = $user['Lname'];
+        $_SESSION['users']['PN'] = $user['PN'];
+        // }
 
-        //$_SESSION['username'] = implode(',', $user);
         header('location: firstpage.php');
     }
 }
