@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 if (isset($_POST['login_user'])){
 
     $studentid = mysqli_real_escape_string($conn, $_POST['studentid']);
-    // $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     
     //Check Connection
@@ -31,7 +31,7 @@ if (!$conn){
     $query1 = "SELECT * FROM llogin WHERE SN='$studentid' AND password= MD5('$password') LIMIT 1";
     $res= mysqli_query($conn,$query1);
     
-    header('location: firstpage.php');
+    header('location: student_homepage.php');
     
 }
 
