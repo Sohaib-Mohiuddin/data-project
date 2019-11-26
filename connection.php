@@ -28,12 +28,19 @@ if (!$conn){
 }
 
  
-    $query = "SELECT * FROM login WHERE SN='$studentid' AND password='$password'  LIMIT 1";
-    $results = mysqli_query($conn, $query);
+    $query1 = "SELECT * FROM llogin WHERE SN='$studentid' AND password= MD5('$password') LIMIT 1";
+    $res= mysqli_query($conn,$query1);
+    
+    
+
+    
+
+    $query2 = "SELECT * FROM student WHERE SN='$studentid' LIMIT 1";
+    $results = mysqli_query($conn, $query2);
     $user = mysqli_fetch_array($results);
      
 
-    if (mysqli_num_rows($results)== 1){
+    if (mysqli_num_rows($res) > 0 && mysqli_num_rows($results) > 0 ){
         $_SESSION['users'] = array();
         $_SESSION['users']['SN'] = $user['SN'];
         $_SESSION['users']['Fname'] = $user['Fname'];
@@ -47,10 +54,7 @@ if (!$conn){
         header('location: firstpage.php');
     }
 
-    else{
-        array_push($errors, "Invalid ID");
-        
-    }
-
+    
 }
+
 ?>
