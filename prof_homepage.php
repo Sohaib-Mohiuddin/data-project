@@ -60,3 +60,5 @@
         <option value="Query">Query</option>
     </select>
 </form>
+
+<p><a href = "login.php" class = "logout">Logout</a></P>
