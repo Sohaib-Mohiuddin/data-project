@@ -16,16 +16,17 @@
     <form method='POST' action='login.php'>
         
         <div class="input-group">
-        Student Number: <input type='number' name='studentid' autocomplete="off"><br><br>
+        ID: <input type='number' name='studentid' autocomplete="off" max = "99999999" ><br><br>
         </div>
         <div class="input-group">
         Password: <input type='password' name='password' autocomplete="off"><br><br>
         </div>
         
-        <select name = "selected">
-            <option value="Student">Student</option>
-            <option value="Professor">Professor</option>
-            <option value="Admin">Admin</option>
+        <select name= "dropdown">
+            <option value=" ">          </option>
+            <option value="student">Student</option>
+            <option value="professor">Professor</option>
+            <option value="admin">Admin</option>
         </select>
         <div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
