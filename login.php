@@ -22,7 +22,7 @@
         Password: <input type='password' name='password' autocomplete="off"><br><br>
         </div>
         
-        <select>
+        <select name = "selected">
             <option value="Student">Student</option>
             <option value="Professor">Professor</option>
             <option value="Admin">Admin</option>
