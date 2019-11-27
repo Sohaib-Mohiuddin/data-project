@@ -11,11 +11,11 @@
 <?php endif ?>
 
 <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'student_homepage')">Home</button>
-    <button class="tablinks" onclick="openCity(event, 'student_profile')">Profile</button>
-    <button class="tablinks" onclick="openCity(event, 'student_grades')">Grades</button>
-    <button class="tablinks" onclick="openCity(event, 'student_review')">Reviews</button>
-    <!-- <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button> -->
+    <button class="tablinks" onclick="openPage(event, 'student_homepage')">Home</button>
+    <button class="tablinks" onclick="openPage(event, 'student_profile')">Profile</button>
+    <button class="tablinks" onclick="openPage(event, 'student_grades')">Grades</button>
+    <button class="tablinks" onclick="openPage(event, 'student_review')">Reviews</button>
+    <!-- <button class="tablinks" onclick="openPage(event, 'Tokyo')">Tokyo</button> -->
 </div>
 
 <br><br><br>

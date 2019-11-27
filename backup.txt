@@ -37,3 +37,19 @@ $_SESSION['users']['Major'] = $user['Major'];
     foreach ($_SESSION['users'] as $row => $value) { ?>
         <td><?php echo $value;?></td>
     <?php } ?>
+
+<?php if (isset($_SESSION['users'])):?>
+<strong><?php echo "Welcome " . $_SESSION['users']['Fname'] . " " . $_SESSION['users']['Lname'] . " " . $_SESSION['login_user'];?>
+<?php endif ?>
+
+$servername = "localhost";
+$username = "root";
+$password = "Sohaibm131";
+$database = "school_yshaik";
+$users = "";
+
+$servername = "db4free.net";
+$username = "yshaik392";
+$password = "testing123";
+$database = "school_yshaik";
+$users = "";
