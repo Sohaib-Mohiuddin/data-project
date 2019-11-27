@@ -1,4 +1,4 @@
-function openPage(evt, cityName) {
+function openPage(evt, pageName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -8,6 +8,6 @@ function openPage(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    window.open(cityName.concat(".php"), "_self");
+    window.open(pageName.concat(".php"), "_self");
     evt.currentTarget.className += " active";
 }
