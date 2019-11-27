@@ -24,7 +24,7 @@
 
 <br><br><br>
 
-<p>Student Information of those whose grades are less than the avergage grade</p>
+<p>Student Information of those whose grades are greater than the average grade</p>
 <table>
     <thead>
         <tr>

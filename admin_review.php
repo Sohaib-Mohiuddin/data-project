@@ -19,7 +19,7 @@
 
 <br><br><br>
 
-<p>Student Ratings</p>
+<p>Student grades over 80% that are not in engineering</p>
 <table>
     <thead>
         <tr>
