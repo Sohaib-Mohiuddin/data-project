@@ -1,0 +1,39 @@
+student
+1, 3, 4, 7
+prof
+8, 9
+admin
+2, 5, 6, 10
+
+1.
+SELECT Fname, Lname, Cname, Grade
+FROM student S
+JOIN grades G ON G.SN = S.SN
+JOIN courses C ON C.CRN = G.CRN;
+
+2.
+SELECT Fname, Lname, Grade FROM student S, grades G WHERE (S.SN = G.SN AND Grade > 80) NOT IN(SELECT Fname FROM student S WHERE S.Major = 'Engineering');
+
+3.
+SELECT * FROM review WHERE SN=40000000;
+
+4.
+SELECT CRN FROM enrolled_in WHERE SN=40000000;
+
+5.
+SELECT G.SN, G.CRN, G.Grade, S.Fname, S.Lname FROM grades G, student S, WHERE G.SN = S.SN AND S.Major = ‘Engineering’;
+
+6. Full Join
+SELECT S.SN, S.Fname, S.Lname, G.Grade FROM student S LEFT JOIN grades G ON S.SN = G.SN UNION SELECT S.SN, S.Fname, S.Lname, G.Grade FROM student S RIGHT JOIN grades G ON S.SN = G.SN;
+
+7.
+SELECT Fname, Lname FROM professor WHERE Profno = ALL(SELECT Profno FROM review WHERE Rating = 3) GROUP BY Fname;
+
+8.
+SELECT Grade, Fname, Lname FROM grades G, student S WHERE S.SN = G.SN AND Grade > (SELECT avg(GRADE) FROM GRADES WHERE G.SN = S.SN);
+
+9.
+SELECT S.SN FROM student S, grades G WHERE grade < 50 AND S.SN = G.SN
+
+10.
+SELECT Fname, Lname, SN FROM student WHERE Major = 'Engineering';

@@ -2,8 +2,8 @@
 <script src = functions.js></script>
 <?php 
     include('connection.php');  
-    $id = $_SESSION['users']['SN'];
-    $query = "SELECT E.Cname, E.CRN, P.Fname, P.Lname FROM enrolled_in E, courses C, professor P WHERE E.SN = '$id' AND E.Cname = C.Cname AND C.Profno = P.Profno";
+    $id = $_SESSION['users']['Profno'];
+    $query = "SELECT CRN, Department, Cname FROM courses WHERE Profno = '$id'";
     $results = mysqli_query($conn, $query);
 ?>
 <?php if (isset($_SESSION['users'])):?>
@@ -11,10 +11,10 @@
 <?php endif ?>
 
 <div class="tab">
-    <button class="tablinks" onclick="openPage(event, 'student_homepage')">Home</button>
-    <button class="tablinks" onclick="openPage(event, 'student_profile')">Profile</button>
-    <button class="tablinks" onclick="openPage(event, 'student_grades')">Grades</button>
-    <button class="tablinks" onclick="openPage(event, 'student_review')">Reviews</button>
+    <button class="tablinks" onclick="openPage(event, 'prof_homepage')">Home</button>
+    <button class="tablinks" onclick="openPage(event, 'prof_profile')">Profile</button>
+    <button class="tablinks" onclick="openPage(event, 'prof_grades')">Grades</button>
+    <button class="tablinks" onclick="openPage(event, 'prof_review')">Reviews</button>
     <!-- <button class="tablinks" onclick="openPage(event, 'Tokyo')">Tokyo</button> -->
 </div>
 
@@ -30,16 +30,16 @@
 <table class = "table">
     <thead>
         <tr>
-            <th>Course Name</th>
             <th>CRN</th>
-            <th>Professor Name</th>
+            <th>Department</th>
+            <th>Course Name</th>
         </tr>
     </thead>
     <?php while ($row = mysqli_fetch_array($results)) { ?>
         <tr>
-            <td><?php echo $row['Cname'];?></td>
             <td><?php echo $row['CRN'];?></td>
-            <td><?php echo $row['Fname'] . " " . $row['Lname'];?></td>
+            <td><?php echo $row['Department'];?></td>
+            <td><?php echo $row['Cname'];?></td>
         </tr>
     <?php } ?>
 </table>

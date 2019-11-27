@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src = student_functions.js></script>
+<script src = functions.js></script>
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
