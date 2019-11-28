@@ -1,10 +1,11 @@
 import mysql.connector
 import json
+import os
 
 mydb = mysql.connector.connect(
-  host="db4free.net",
-  user="yshaik392",
-  passwd="testing123"
+  host="localhost",
+  user="sohaibmohiuddin",
+  passwd="sohaibmohiuddin"
 )
 
 api={}

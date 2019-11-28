@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 import requests as apirequest
 import mysql.connector
-
+import os
 
 mydb = mysql.connector.connect(
-  host="db4free.net",
-  user="yshaik392",
-  passwd="testing123",
+  host="localhost",
+  user="sohaibmohiuddin",
+  passwd="sohaibmohiuddin",
   database="school_yshaik"
 )
 
