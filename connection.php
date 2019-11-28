@@ -60,11 +60,7 @@ if (isset($_POST['login_user']) && $_POST['dropdown']!=" " ){
                header('location: admin_homepage.php');
             }
         }
-}
-    else {
-        
-        echo "Please select valid value from dropdown list";
-      }
+    }
 
       if (isset($_GET['logout'])){
         session_destroy();

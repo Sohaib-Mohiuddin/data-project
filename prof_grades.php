@@ -1,5 +1,8 @@
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src = functions.js></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src = "functions.js"></script>
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['Profno'];
@@ -14,18 +17,25 @@
 <strong><?php echo "Welcome ".$_SESSION['users']['Profno'];?>
 <?php endif ?>
 
-<div class="tab">
-    <button class="tablinks" onclick="openPage(event, 'prof_homepage')">Home</button>
-    <button class="tablinks" onclick="openPage(event, 'prof_profile')">Profile</button>
-    <button class="tablinks" onclick="openPage(event, 'prof_grades')">Grades</button>
-    <button class="tablinks" onclick="openPage(event, 'prof_review')">Reviews</button>
-    <!-- <button class="tablinks" onclick="openPage(event, 'Tokyo')">Tokyo</button> -->
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" onclick="openPage(event, 'prof_homepage')">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="openPage(event, 'prof_profile')">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" onclick="openPage(event, 'prof_grades')">Grades</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="openPage(event, 'prof_review')">Reviews</a>
+  </li>
+</ul>
 
 <br><br><br>
 
 <p>Student Information of those whose grades are greater than the average grade</p>
-<table>
+<table class = "table">
     <thead>
         <tr>
             <th>Grade</th>
@@ -43,7 +53,7 @@
 <br><br><br>
 
 <p>Student Number of students whose grades are less than 50%</p>
-<table>
+<table class = "table">
     <thead>
         <tr>
             <th>Student Number</th>

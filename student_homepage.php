@@ -1,5 +1,9 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src = "functions.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script src = functions.js></script>
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
@@ -10,13 +14,20 @@
 <strong><?php echo "Welcome " . $id;?>
 <?php endif ?>
 
-<div class="tab">
-    <button class="tablinks" onclick="openPage(event, 'student_homepage')">Home</button>
-    <button class="tablinks" onclick="openPage(event, 'student_profile')">Profile</button>
-    <button class="tablinks" onclick="openPage(event, 'student_grades')">Grades</button>
-    <button class="tablinks" onclick="openPage(event, 'student_review')">Reviews</button>
-    <!-- <button class="tablinks" onclick="openPage(event, 'Tokyo')">Tokyo</button> -->
-</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" onclick="openPage(event, 'student_homepage')">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="openPage(event, 'student_profile')">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="openPage(event, 'student_grades')">Grades</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" onclick="openPage(event, 'student_review')">Reviews</a>
+  </li>
+</ul>
 
 <br><br><br>
 
