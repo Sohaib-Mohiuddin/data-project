@@ -11,7 +11,7 @@ This system can be implemented using localhost with the assistance of WAMP (Wind
 1. Install WAMP from [HERE](http://www.wampserver.com/en/).
 2. Launch Wampserver64 then go to the system icon tray at the bottom right to make sure all 3 services are running (Green WAMP Icon):
 ![alt text](screenshots/README_images/system_tray_icons.png "WAMP: All Services Running")<br> 
-3. Go to "C:\wamp64\www" and place the project folder in the "www" directory.
+3. Go to "C:\wamp64\www" and place the project folder (**data-project / data-project** (The main directory is called data-project and sub-directory has the same name. You must put the sub-directory in the "www" directory)) in the "www" directory.
 4. PhpMyAdmin can be accessed by going to [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/).
 5. By Default, the login for phpMyAdmin is:
     - Username: "_root_"
