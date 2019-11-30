@@ -1,3 +1,5 @@
+<!-- This is the login page where the user is prompted to enter their id, password and the type of user they are in order to log in. -->
+
 <?php include('connection.php') ?>
 <!DOCTYPE html>
 <html>
