@@ -1,3 +1,4 @@
+<!-- This is the student review page, where the student can write reviews for professors and view any ratings they have given to any professors -->
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -7,9 +8,11 @@
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
     
+    // This query displays all the reviews that the student has submitted
     $query1 = "SELECT * FROM review WHERE SN = '$id'";
     $results1 = mysqli_query($conn, $query1);
 
+    // This query displays the names of the professors that have a rating of 3
     $query2 = "SELECT Fname, Lname FROM professor WHERE Profno = ANY(SELECT Profno FROM review WHERE Rating = 3) GROUP BY Fname";
     $results2 = mysqli_query($conn, $query2);
 
