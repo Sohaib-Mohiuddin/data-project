@@ -1,3 +1,5 @@
+<!-- This page is the homepage for the prof. As soon as the professor logs in, he is redirected to this page -->
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -6,6 +8,8 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['Profno'];
+
+    //This query displays the courses the certain prof is teaching
     $query = "SELECT CRN, Department, Cname FROM courses WHERE Profno = '$id'";
     $results = mysqli_query($conn, $query);
 ?>

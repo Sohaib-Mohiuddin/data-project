@@ -1,3 +1,5 @@
+<!-- This is the students grade page where students can view their grades -->
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -6,6 +8,8 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
+
+    //This query returns all grades from all courses that student is taking
     $query = "SELECT S.SN, Cname, Grade FROM student S JOIN grades G ON G.SN = S.SN JOIN courses C ON C.CRN = G.CRN WHERE S.SN = '$id'";
     $results = mysqli_query($conn, $query);
 ?>

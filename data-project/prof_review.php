@@ -1,3 +1,5 @@
+<!-- This is the prof review page where they can see all reviews occuring -->
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -6,6 +8,8 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['Profno'];
+
+    //query selects all the reviews for the course that the prof is teaching and displays them
     $query = "SELECT Rating, CRN FROM review WHERE Profno = '$id'";
     $results = mysqli_query($conn, $query);
 ?>

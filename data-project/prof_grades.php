@@ -1,3 +1,5 @@
+<!-- This page allows professors to view the grades for the courses they are teaching. Manim=pulating of grades will be added in the future -->
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -7,9 +9,11 @@
     include('connection.php');  
     $id = $_SESSION['users']['Profno'];
 
+    // query1 Displays all students whos grades are greater than the average grade
     $query1 = "SELECT Grade, Fname, Lname FROM grades G, student S WHERE S.SN = G.SN AND Grade > (SELECT avg(GRADE) FROM GRADES WHERE G.SN = S.SN)";
     $results1 = mysqli_query($conn, $query1);
-
+    
+    //query2 Displays the students who's grades are less than 50 percent
     $query2 = "SELECT S.SN FROM student S, grades G WHERE grade < 50 AND S.SN = G.SN";
     $results2 = mysqli_query($conn, $query2);
 ?>
