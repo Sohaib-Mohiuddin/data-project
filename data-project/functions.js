@@ -1,3 +1,5 @@
+/* This function is used to navigate through the web application by applying
+   functionality to the tabs at the top of each web page */
 function openPage(evt, pageName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
