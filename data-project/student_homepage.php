@@ -1,3 +1,4 @@
+<!-- This is the students homepage, where the student is redirected to when they log in. -->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -7,6 +8,8 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['SN'];
+
+    //This query displays the professors and courses that the student is enrolled in
     $query = "SELECT E.Cname, E.CRN, P.Fname, P.Lname FROM enrolled_in E, courses C, professor P WHERE E.SN = '$id' AND E.Cname = C.Cname AND C.Profno = P.Profno";
     $results = mysqli_query($conn, $query);
 ?>
