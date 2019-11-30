@@ -1,3 +1,4 @@
+<!-- This is the admin review page. The admin can view the reviews that are happenning on the system -->
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -6,6 +7,8 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['Ano'];
+
+    // query that selects the students and grades greater than 80 percent whos major is not engineering 
     $query = "SELECT Fname, Lname, Grade FROM student S, grades G WHERE (S.SN = G.SN AND Grade > 80) NOT IN(SELECT Fname FROM student S WHERE S.Major = 'Engineering')";
     $results = mysqli_query($conn, $query);
 ?>
