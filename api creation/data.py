@@ -16,53 +16,42 @@ mycursor.execute("SELECT * FROM school_yshaik.courses")
 courses=mycursor.fetchall()
 api["Courses"]=courses
 
-
+#Get all information from enrolled in table
 mycursor.execute("SELECT * FROM school_yshaik.enrolled_in")
 enrolled_in=mycursor.fetchall()
+#add information from table into dictionary with matching key to its value
 api["enrolled_in"]=enrolled_in
 
 
-
+#Get all information from grades table
 mycursor.execute("SELECT * FROM school_yshaik.grades")
 grades=mycursor.fetchall()
+#add information from table into dictionary with matching key to its value
 api["grades"]=grades
-#remove decimal
+#remove ecimal
 
+#Get all information from professor table
 mycursor.execute("SELECT * FROM school_yshaik.professor")
 professor=mycursor.fetchall()
+#add information from table into dictionary with matching key to its value
 api["professor"]=professor
-#remove dob
 
+#Get all information from review table
 mycursor.execute("SELECT * FROM school_yshaik.review")
 review=mycursor.fetchall()
+#add information from table into dictionary with matching key to its value
 api["review"]=review
-#remove decimal
 
+#Get all information from student table
 mycursor.execute("SELECT * FROM school_yshaik.student")
 student=mycursor.fetchall()
+#add information from table into dictionary with matching key to its value
 api["student"]=student
-#remove date
 
-# 
-# stringApi=str(api)
-
-# stringApi.replace("Decimal", "")
-# stringApi.replace("datetime.date", "")
-# # stringApi=stringApi.replace("(", "[")
-# # stringApi=stringApi.replace(")", "]")
-# stringApi=stringApi.replace("'", "\"")
-# # stringApi=stringApi.replace(")", "]")
-# print("______________________________________")
-
-# for x in api.keys():
-# 	api[x].replace("Decimal", "")
-# 	api[x].replace("datetime.date", "")
-# 	# print(api[x], "++++")
-
-
-
+#print dictionary to screen for debugging
 print(api)
 
+#store information in json file
 json=json.dumps(api)
 f=open("api.json", "w")
 f.write(json)
