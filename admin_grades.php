@@ -1,3 +1,4 @@
+<!-- This is the admins grades page. The admin can check the statistics of the grades in the system as well as manage them -->
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -6,16 +7,20 @@
 <?php 
     include('connection.php');  
     $id = $_SESSION['users']['Ano'];
-
+    
+    // query1 selects all the students with a grade of more than 80 that are not in engineering 
     $query1 = "SELECT Fname, Lname, Grade FROM student S, grades G WHERE (S.SN = G.SN AND Grade > 80) NOT IN(SELECT Fname FROM student S WHERE S.Major = 'Engineering')";
     $results1 = mysqli_query($conn, $query1);
-
+    
+    // query2 selects all students grades where the major is engineering
     $query2 = "SELECT G.SN, G.CRN, G.Grade, S.Fname, S.Lname FROM grades G, student S WHERE G.SN = S.SN AND S.Major = \"Engineering\"";
     $results2 = mysqli_query($conn, $query2);
-
+    
+    // query3 returns a table with all students and their grades
     $query3 = "SELECT S.SN, S.Fname, S.Lname, G.Grade FROM student S LEFT JOIN grades G ON S.SN = G.SN UNION SELECT S.SN, S.Fname, S.Lname, G.Grade FROM student S RIGHT JOIN grades G ON S.SN = G.SN";
     $results3 = mysqli_query($conn, $query3);
     
+    // query4 selects all students where major is engineering
     $query4 = "SELECT Fname, Lname, SN FROM student WHERE Major = \"Engineering\"";
     $results4 = mysqli_query($conn, $query4);
 ?>
