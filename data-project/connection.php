@@ -1,3 +1,4 @@
+<!-- This is the main connection page. This includes the connection to the database and the queries for the login page -->
 <?php
 session_start();
 $servername = "localhost";
@@ -5,7 +6,7 @@ $username = "sohaibmohiuddin";
 $password = "sohaibmohiuddin";
 $database = "school_yshaik";
 $users = "";
-
+//connection to database 
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Create connection
