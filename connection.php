@@ -1,8 +1,8 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "root";
-$password = "Sohaibm131";
+$username = "sohaibmohiuddin";
+$password = "sohaibmohiuddin";
 $database = "school_yshaik";
 $users = "";
 

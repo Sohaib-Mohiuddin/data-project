@@ -4,8 +4,8 @@ import os
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="sohaibmohiuddin",
-  passwd="sohaibmohiuddin"
+  user="",
+  passwd=""
 )
 
 api={}
